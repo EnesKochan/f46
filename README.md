@@ -1,80 +1,80 @@
 # **Takım İsmi**
 
-Takım Flutter 52
+Takım Flutter 46
 
 # Ürün İle İlgili Bilgiler
 
 ## Takım Elemanları
-- Muhammed Mustafa Aksoy: Scrum Master / Product Owner / Developer
-- Sümeyye Aydoğan: Developer
-- Yunus Emre Gürel: Developer
-- Zeynep Nur Meşe: Aktif Olmayan Üye
+- Murat Avcı: Scrum Master / Developer
+- Enes Koçhan: Product Owner / Developer
+- Tuğba Yıldız: Developer
+- Mert Ali Dalkır: Developer
+- Emine Ünal: Aktif olmayan üye
 
 ## Ürün İsmi
 
---Scrap App--
+### <font color=orange> Travelly </font>
 
 ## Product Backlog URL
 
-[Flutter Team 52 Miro Backlog Board](https://miro.com/app/board/uXjVO4kRs2w=/)
+[Flutter Team 46 Trello Backlog Board](https://trello.com/invite/b/LYhHZu5h/ATTI2a04919fec9f132a7fae05afcfe79dca39429EA2/sprint-1)
 
 ## Ürün Açıklaması
 
-Scrap App, daire sakinleri tarafından biriktirilmiş apartman ve sitelere ait kıymetli geri dönüşüm atıklarının, geri dönüştürülebilir atık toplayan firmalar tarafından toplanmasını kolaylaştırır ve apartman yönetimlerinin bir gelir kalemi olarak geri dönüşüm ödemesi almalarını sağlar. Ayrıca hurda ilanı verilebilen bu uygulamada kullanıcılar biriktirdikleri, bakır, demir, çelik, alüminyum, kağıt, cam vb hurdaların satışını ilanlar ile yapabilir. Scrap App, geri dönüştürülebilir atıkların kıymetinine önem verir, apartman ve site gibi, insanların blok halde yaşadığı mekanlarda, onların geri dönüşüm atıklarını topluca biriktirmelerini teşvik eder ve kolaylaştırır. Scrap App kağıt, metal, plastik cam vb ürünlerin geri dönüştürülmesi halinde, insanların kendisi, çevresi ve ülkesi için maddi gelir ve Dünya doğası için sürekli fayda sağlayabileceğini savunur ve geri dönüşüm sayesinde yeniden üretim ve madencilik faaliyetlerinin azaltılabileceğini ve böylece yeniden üretim kaynaklı doğaya olan zararın azaltılması gerektiği fikrini destekler ve yeniden kazanımı hedefler.
+Gezginleri hedef kitlesi olarak odak alan uygulamamız, seyahat edenlerin deneyimlerini zenginleştirmek için tasarlandı. <font color=orange> Travelly </font> sayesinde, turist olarak ziyaret ettiğiniz şehirlerde gezilmesi önerilen yerleri keşfedebilir, topluluk tarafından oluşturulan rotaları kolaylıkla inceleyebilir ve şehrin geleneksel yemeklerini deneyimleyebilirsiniz. Ayrıca, sevdiğiniz gezginlerin hesaplarını takip edebilir ve daha önce kullanmış oldukları rotaları görüntüleyerek ilham alabilirsiniz. Uygulama içindeki kullanıcı dostu arayüzü sayesinde, seyahat deneyimlerinizi daha keyifli hale getirecek birçok özelliğe erişim sağlayacaksınız.
+
+Uygulamanın ikincil fonksiyonu, kullanıcıların gidilen her mekanı, müzeyi veya diğer yerleri yorumlayıp puanlamasını sağlamaktır. Bu sayede, diğer gezginlerin gerçek deneyimlerini gözlemleyerek daha bilinçli kararlar alabilirsiniz. Gelişmiş yapay zeka algoritmalarıyla donatılmış uygulamamız, gezilmesi önerilen yerleri tek bir tuşla sıralayarak sınırlı zamanınızda bile görülmesi gereken her yeri keşfetmenizi sağlayacaktır. Size en uygun rotaları belirleyerek, seyahat deneyiminizin en iyi şekilde geçmesini sağlamak için sürekli olarak size rehberlik edecektir.
+
+Uygulama, seyahat etmeyi sevenlerin yolculuklarını unutulmaz kılmak için tasarlanmıştır.
 
 
-- **Uygulama birincil fonksiyonu**: Apartman/site sakinlerinin geri dönüşebilir kıymetli atıkları apartman hizmetlisi tarafından düzenli olarak toplanarak, akıllı geri dönüşüm kutusunda biriktirilir, toplayıcı firma biriken atıklara ilişkin kutu doluluk oranını uygulama üzerinden görür ve satın alma teklifini apartman yönetimine uygulama ile bildirir, apartman yönetiminin teklif onayından sonra, atık satın alma işlemi gerçekleşir.
-
-- **Uygulama ikincil fonksiyonu**: Kullanıcı elindeki geri dönüşebilir kıymetli maddeler için teklif almak üzere Scrap App'e girer ve ilan verir, toplayıcı firma, kullanıcının ilanına ilişkin ağırlık ve madde türü gibi bilgileri kullanıcının ilanında görür ve satın alma teklifini kullanıcıya bildirir, kullanıcının teklif onayından sonra, hurda satın alma işlemi gerçekleşir.
 
 ## Ürün Özellikleri
 
-- Doluluk oranı %75'in üzerinde olan apartman akıllı atık kutularının kutu doluluk oranının geri dönüşüm atık toplayıcılarına bildirilmesi.
-- Doluluk oranı %75'in üzerinde olan apartman akıllı atık kutularındaki geri dönüşüm maddelerinin satın alınmasına ilişkin, toplayıcı firmalar tarafından satın alma teklifini apartman yönetimlerine sunabilmesi ve yönetici tarafından teklifin kabul edilmesi.
-- Apartmandan bağımsız olarak biriktirilmiş bireysel geri dönüşüm maddelerinin satın alımı için toplayıcı firmalardan teklif alma ve toplayıcı çağırma hizmeti.
-- Kullanıcı, apartman yönetimi, atık toplayıcı firma ve uygulama şirketi için geliştirilmiş kullanıcı rolleri, özellikleri ve ekranları.
+- Topluluk kullanıcıları tarafından rota oluşturulması.
+- Topluluk kullanıcıları tarafından veya  <font color=orange> Travelly </font> tarafından oluşturulan rotaların ve konumların favorilere eklenmesi ve bunlar hakkında yorum yapılması.
+- Rotaların veya konumların filtrelenmesi.
+- Daha önce gidilen ülkelerin, şehirlerin veya konumların kaydedilmesi ve bunların harita üzerinde görüntülenmesi.
+
 
 ## Hedef Kitle
 
-- Çevreci gönüllüler
-- Apartman yöneticileri
-- Apartman sakinleri
-- Bina yönetim şirketleri 
-- Geri dönüşüm merkezleri
-- Geri dönüşüm atık toplayıcıları
-
-## Juriye Not
-
-İlan formu veritabanına başarılı şekilde veri göndermesine rağmen, tecrübe yetersizliği ve zaman eksikliği sebebiyle ilanlar listesi ve teklif formları veritabanıyla ilişkilendirilememiştir.
+- Gezginler
+- Turistler
+- Gezi yazarları
+- Seyahat endüstrisi
 
 
 ---
 
 # Sprint 1
 
-- **Sprint içinde tamamlanması tahmin edilen puan**: 100 Puan
+- **Sprint içinde tamamlanması tahmin edilen puan**: 42 Puan
 
 
-- **Puan tamamlama mantığı**: Toplamda proje boyunca tamamlanması gereken 340 puanlık backlog bulunmaktadır. 3 sprint'e bölündüğünde ilk sprint'in en azından 100 ile başlaması gerektiğine karar verildi.
+- **Puan tamamlama mantığı**: Puanlama yapılırken her bir story için “Ne kadar sürede bitirirsin?”, “Zorluk seviyesi nedir?” sorularının cevapları her ekip üyesinden alındı ve ortalama hesaplanıp hikayelere puan verildi. <br> İlk sprint boyunca 80 puanlık backlog hazırlandı, 42 puanlık kısmını ilk sprintte bitirme kararı alındı.</br>
+
+- **Backlog düzeni ve Story seçimleri**: Backloglar başlangıçta yapılacak story'lere göre hazırlandı. Sprint başına tahmin edilen puan sayısını geçmeyecek şekilde sırayla backlog'lar seçildi.<br>Story'ler backloglara yazılırken etiketler verilmiş mavi etiketler "Frontend", kırmızı etiketler "Backend" ler için kullanılmıştır.  Her storyde yapılacak işler yazılmış ve gerekli linkler eklenmiştir. Ayrıca yapılacak işler (task'ler) kontrol listesi altına eklenmiştir.</br>
 
 
-- **Daily Scrum**: Daily Scrum toplantılarının zamansal sebeplerden ötürü Whatsapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg veya word olarak Readme'de tarafımızdan paylaşılmaktadır: [Sprint 1 Daily Scrum Chats](https://github.com/OyunveUygulamaAkademisi/Bootcamp2022Example/blob/main/ProjectManagement/Sprint1Documents/DailyScrumMeetingNotesSprint1.docx?raw=true)
+
+- **Daily Scrum**: Daily scrum toplantıları Discord üzerinde oluşturduğumuz sunucu üzerinden sesli olarak yapıldı. Toplantılar boyunca alınan notlar google çevirimci e-tablolarda paylaşıldı.
+<br><img src="readmeDocument/sheets.png" width="9"> [Daily Scrum Notları](https://docs.google.com/spreadsheets/d/155HReb46n69204VOSWxT96abclGTPvVfpnWJdaWamCo/edit?usp=sharing)</br>
+
 
 - **Sprint board update**: Sprint board screenshotları: 
-![Backlog 1](https://raw.githubusercontent.com/OyunveUygulamaAkademisi/Bootcamp2022Example/main/ProjectManagement/Sprint1Documents/backlog1.png) 
+![Backlog 1](readmeDocument/sprint1_3.jpg) 
 
 
-- **Ürün Durumu**: Ekran görüntüleri:
-  ![Screenshot 1](https://github.com/OyunveUygulamaAkademisi/Bootcamp2022Example/blob/main/ProjectManagement/Sprint1Documents/product1.png)
-  ![Screenshot 2](https://github.com/OyunveUygulamaAkademisi/Bootcamp2022Example/blob/main/ProjectManagement/Sprint1Documents/product2.png)
-  ![Screenshot 3](https://github.com/OyunveUygulamaAkademisi/Bootcamp2022Example/blob/main/ProjectManagement/Sprint1Documents/product4.gif)
+- **Ürün Durumu**: Ürünün Workflow v UI screenshotları:
+  ![Screenshot 1](readmeDocument/sprint1_2.jpg)
+  ![Screenshot 1](readmeDocument/sprint1_1.jpg)
+  
 - **Sprint Review**: 
-Alınan kararlar: Kullanıcı temel sayfaları oluşturulmuş, bazıları kodlanmış, arduino kurulumu ve firebase'e bağlanması sağlanmış, uygulama için veritabanı olarak firebase servisleri aktif edilmiş ve eksiklikler değerlendirilmiştir. Sprint Review katılımcıları: Mustafa Aksoy
+Alınan kararlar: Uygulamanın tasarımının genel hatları kesinleşmiş, google_maps ve firebase kütüphaneleri kurulmuş, veritabanı için firebase servisleri aktif edilmiş ve eksiklikler değerlendirilmiştir. <br> Sprint Review katılımcıları: Murat Avcı, Enes Koçhan, Mert Ali Dalkır, Tuğba Yıldız
 
 - **Sprint Retrospective:**
-  - Roller ile ilgili düzenleme yapılmış, scrum master değişmiştir.
-  - Takım içindeki görev dağılımıyla ilgili düzenleme yapılması kararı alınmıştır.
-  - Takım üyelerinin gelecek sprintlerde aktif olması gerektiğine vurgu yapılmıştır.
+  - XXX
  
 
 
@@ -82,65 +82,7 @@ Alınan kararlar: Kullanıcı temel sayfaları oluşturulmuş, bazıları kodlan
 
 ## Product Backlog URL
 
-[Flutter Team 52 Miro Backlog Board](https://miro.com/app/board/uXjVO4kRs2w=/)
+[Flutter Team 46 Trello Backlog Board](https://trello.com/invite/b/LYhHZu5h/ATTI2a04919fec9f132a7fae05afcfe79dca39429EA2/sprint-1)
 
 ---
 
-# Sprint 2
-
-- **Sprint içinde tamamlanması tahmin edilen puan**: 120 Puan
-
-- **Daily Scrum**: Daily Scrum toplantılarının zamansal sebeplerden ötürü Whatsapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg veya word olarak Readme'de tarafımızdan paylaşılmaktadır: [Sprint 2 Daily Scrum Chats](https://github.com/OyunveUygulamaAkademisi/Bootcamp2022Example/blob/main/ProjectManagement/Sprint2Documents/DailyScrumMeetingNotesSprint2.docx?raw=true)
-
-- **Sprint board update**: Sprint board screenshotları: 
-![Backlog 1](https://github.com/OyunveUygulamaAkademisi/Bootcamp2022Example/blob/main/ProjectManagement/Sprint2Documents/2022-05-22%2019_25_30-Window.png) 
-
-
-- **Ürün Durumu**: Ekran görüntüleri:
-  ![Screenshot 1](https://github.com/OyunveUygulamaAkademisi/Bootcamp2022Example/blob/main/ProjectManagement/Sprint2Documents/1.jpeg)
-  ![Screenshot 2](https://github.com/OyunveUygulamaAkademisi/Bootcamp2022Example/blob/main/ProjectManagement/Sprint2Documents/2.jpeg)
-  ![Screenshot 3](https://github.com/OyunveUygulamaAkademisi/Bootcamp2022Example/blob/main/ProjectManagement/Sprint2Documents/3.jpeg)
-- **Sprint Review**: 
-Alınan kararlar: Kullanıcı temel sayfaların arayüzleri, algoritmaları kodlanmış, firebase servislerine bağlantıları yapılmış ve eksiklikleri değerlendirilmiştir. 
-Sprint Review katılımcıları: Mustafa Aksoy, Yunus Emre Gürel, Sümeyye Aydoğan 
-
-- **Sprint Retrospective:**
-
-  - Takım üyelerinin gelecek sprintlerde daha fazla aktif olması gerektiğine vurgu yapılmıştır.
-
-
----
-
-## Product Backlog URL
-
-[Flutter Team 52 Miro Backlog Board](https://miro.com/app/board/uXjVO4kRs2w=/)
-
----
-
-# Sprint 3
-
-- **Sprint içinde tamamlanması tahmin edilen puan**: İkinci sprintten kalan 120 puanın da eklenmesiyle bu sprint için toplam puan: 240'tır.
-
-
-- **Daily Scrum**: Daily Scrum toplantılarının zamansal sebeplerden ötürü Whatsapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg veya word olarak Readme'de tarafımızdan paylaşılmaktadır: [Sprint 3 Daily Scrum Chats](https://github.com/OyunveUygulamaAkademisi/Bootcamp2022Example/blob/main/ProjectManagement/Sprint3Documents/DailyScrumMeetingNotesSprint3.docx?raw=true)
-
-- **Sprint board update**: Sprint board screenshotları: 
-![Backlog 1](https://github.com/OyunveUygulamaAkademisi/Bootcamp2022Example/blob/main/ProjectManagement/Sprint3Documents/2022-06-06%2000_19_38-Clipboard.png) 
-
-
-- **Ürün Durumu**: Ekran görüntüleri:
-  ![Screenshot 1](https://github.com/OyunveUygulamaAkademisi/Bootcamp2022Example/blob/main/ProjectManagement/Sprint3Documents/1.png)
-  ![Screenshot 2](https://github.com/OyunveUygulamaAkademisi/Bootcamp2022Example/blob/main/ProjectManagement/Sprint3Documents/2.png)
-  ![Screenshot 3](https://github.com/OyunveUygulamaAkademisi/Bootcamp2022Example/blob/main/ProjectManagement/Sprint3Documents/3.png)
-
-
-- **Sprint Review**: 
-Alınan kararlar: Kullanıcı temel sayfaların arayüzleri, algoritmaları kodlanmış, firebase servislerine bağlantıları yapılmış ve tamamlanamayan sayfa, algoritma ve servis bağlantıları değerlendirilmiştir. 
-Sprint Review katılımcıları: Mustafa Aksoy, Yunus Emre Gürel, Sümeyye Aydoğan 
-
-- **Sprint Retrospective:**
-
-  - Takım üyelerinin gelecek projelerde daha fazla aktif olması gerektiğine vurgu yapılmıştır.
-
-
----
