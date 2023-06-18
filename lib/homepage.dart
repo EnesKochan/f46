@@ -1,5 +1,6 @@
 import 'package:f46/ui/costum_theme.dart';
 import 'package:flutter/material.dart';
+import 'widgets/costum_appbar.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -16,13 +17,20 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold( 
+      appBar: CostumAppbar(),
+
       body: 
-        Center(
-          child: 
-          Text("Anasayfa",
-          style: context.h3)),
+        
+          
+            Center(
+              child: 
+              Text("Anasayff",
+              style: context.h3)),
+            
+          
     );
   }
 
   
 }
+
