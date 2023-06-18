@@ -49,10 +49,12 @@ Uygulama, seyahat etmeyi sevenlerin yolculuklarını unutulmaz kılmak için tas
 
 # Sprint 1
 
+- **Sprint Notları**: Story'ler backlogların içinde yazılmış ve story'e bağlı taskler story kartının içine eklenmiştir. Daily Scrum notları exel dosyasıyla paylaşılmıştır.
+
 - **Sprint içinde tamamlanması tahmin edilen puan**: 42 Puan
 
 
-- **Puan tamamlama mantığı**: Puanlama yapılırken her bir story için “Ne kadar sürede bitirirsin?”, “Zorluk seviyesi nedir?” sorularının cevapları her ekip üyesinden alındı ve ortalama hesaplanıp hikayelere puan verildi. <br> İlk sprint boyunca 80 puanlık backlog hazırlandı, 42 puanlık kısmını ilk sprintte bitirme kararı alındı.</br>
+- **Puan tamamlama mantığı**: Puanlama yapılırken her bir story için “Ne kadar sürede bitirirsin?”, “Zorluk seviyesi nedir?” sorularının cevapları her ekip üyesinden alındı ve ortalama hesaplanıp hikayelere puan verildi. <br> İlk sprint boyunca 61 puanlık backlog hazırlandı, 43 puanlık kısmını ilk sprintte bitirme kararı alındı.</br>
 
 - **Backlog düzeni ve Story seçimleri**: Backloglar başlangıçta yapılacak story'lere göre hazırlandı. Sprint başına tahmin edilen puan sayısını geçmeyecek şekilde sırayla backlog'lar seçildi.<br>Story'ler backloglara yazılırken etiketler verilmiş mavi etiketler "Frontend", kırmızı etiketler "Backend" ler için kullanılmıştır.  Her storyde yapılacak işler yazılmış ve gerekli linkler eklenmiştir. Ayrıca yapılacak işler (task'ler) kontrol listesi altına eklenmiştir.</br>
 
@@ -74,7 +76,9 @@ Uygulama, seyahat etmeyi sevenlerin yolculuklarını unutulmaz kılmak için tas
 Alınan kararlar: Uygulamanın tasarımının genel hatları kesinleşmiş, google_maps ve firebase kütüphaneleri kurulmuş, veritabanı için firebase servisleri aktif edilmiş ve eksiklikler değerlendirilmiştir. <br> Sprint Review katılımcıları: Murat Avcı, Enes Koçhan, Mert Ali Dalkır, Tuğba Yıldız
 
 - **Sprint Retrospective:**
-  - XXX
+  - Görev dağılımlarında ufak değişiklikler olmuştur.
+  - İlk sprinte göre ikinci sprintin daha yoğun olacağı konuşulmuş ve bu konuda ikinci sprint için uygunluklar hakkında bilgi alınmıştır.
+  - İkinci sprint için daha yüksek story puanı tamamlanmasına karar verilmiştir.
  
 
 
