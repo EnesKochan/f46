@@ -51,7 +51,7 @@ Uygulama, seyahat etmeyi sevenlerin yolculuklarını unutulmaz kılmak için tas
 
 - **Sprint Notları**: Story'ler backlogların içinde yazılmış ve story'e bağlı taskler story kartının içine eklenmiştir. Daily Scrum notları exel dosyasıyla paylaşılmıştır.
 
-- **Sprint içinde tamamlanması tahmin edilen puan**: 42 Puan
+- **Sprint içinde tamamlanması tahmin edilen puan**: 43 Puan
 
 
 - **Puan tamamlama mantığı**: Puanlama yapılırken her bir story için “Ne kadar sürede bitirirsin?”, “Zorluk seviyesi nedir?” sorularının cevapları her ekip üyesinden alındı ve ortalama hesaplanıp hikayelere puan verildi. <br> İlk sprint boyunca 61 puanlık backlog hazırlandı, 43 puanlık kısmını ilk sprintte bitirme kararı alındı.</br>
