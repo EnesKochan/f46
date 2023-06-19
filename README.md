@@ -77,9 +77,7 @@ Alınan kararlar: Uygulamanın tasarımının genel hatları kesinleşmiş, goog
 
 - **Sprint Retrospective:**
   - Görev dağılımlarında ufak değişiklikler olmuştur.
-  - İlk sprinte göre ikinci sprintin daha yoğun olacağı konuşulmuş ve bu konuda ikinci sprint için uygunluklar hakkında bilgi alınmıştır.
-  - İkinci sprint için daha yüksek story puanı tamamlanmasına karar verilmiştir.
- 
+  - Takımın gelecek sprintlerde daha aktif olması gerektiği konuşulmuştur.
 
 
 ---
