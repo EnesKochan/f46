@@ -16,7 +16,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CostumAppbar(),
-      body: Center(child: Text("Anasayfa3", style: context.h2)),
+      body: Center(child: Text("Anasayfammmmm", style: context.h2)),
     );
   }
 }
