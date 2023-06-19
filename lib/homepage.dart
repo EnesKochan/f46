@@ -24,7 +24,7 @@ class _MyHomePageState extends State<MyHomePage> {
           
             Center(
               child: 
-              Text("Anasayfa",
+              Text("Anasayfa2",
               style: context.h2)),
             
           
