@@ -24,8 +24,8 @@ class _MyHomePageState extends State<MyHomePage> {
           
             Center(
               child: 
-              Text("Anasayff",
-              style: context.h3)),
+              Text("Anasayfa",
+              style: context.h2)),
             
           
     );
