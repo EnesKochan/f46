@@ -88,3 +88,26 @@ Alınan kararlar: Uygulamanın tasarımının genel hatları kesinleşmiş, goog
 
 ---
 
+# Sprint 2
+
+- **Sprint Notları**: Sprint ortasına denk gelen uzun bayram tatili sebebiyle sprint süreci boyunca az toplantı yapımış ve bazı aksaklıklar meydana gelmiştir.
+
+- **Sprint içinde tamamlanması tahmin edilen puan**: 42 Puan
+
+-  **Daily Scrum**: Daily scrum toplantıları Discord üzerinde oluşturduğumuz sunucu üzerinden sesli olarak yapıldı. Toplantılar boyunca alınan notlar google çevirimci e-tablolarda paylaşıldı.
+<br><img src="readmeDocument/sheets.png" width="9"> [Daily Scrum Notları](https://docs.google.com/spreadsheets/d/155HReb46n69204VOSWxT96abclGTPvVfpnWJdaWamCo/edit?usp=sharing)</br>
+
+- **Sprint board update**: Sprint board screenshotları: 
+![Backlog 1](readmeDocument/sprint1_3.jpg)
+
+- **Ürün Durumu**: Ürün Durumu:
+  ![Screenshot 1](readmeDocument/sprint1_2.jpg)
+  ![Screenshot 1](readmeDocument/sprint1_1.jpg)
+  
+- **Sprint Review**: 
+Alınan kararlar: Uygulamanın giriş ekranları hazırlanmış, diğer önemli sayfaların büyük bölümü hazırlanmış ve Firebase'den veriler canlı olarak çekilmiştir.  <br> Sprint Review katılımcıları: Murat Avcı, Enes Koçhan, Mert Ali Dalkır, Tuğba Yıldız
+
+- **Sprint Retrospective:**
+  - Görev dağılımlarında ufak değişiklikler olmuştur.
+  - Katılım sağlamayamadığımız süreçler için bilgilendirmelerin yapılması konusu üzerinde durulmuştur.
+  - Hedeflenen puanın biraz gerisinde kaldığımız için diğer sprintte buna dikkat etmemiz gerektiği konuşulmuştur.
