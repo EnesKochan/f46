@@ -1,9 +1,10 @@
-import 'package:f46/src/app_colors.dart';
-import 'package:f46/views/welcome/welcome_screen.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'package:f46/views/home/home_screen.dart';
+import 'package:f46/ui/costum_theme.dart';
+import 'package:f46/views/welcome/welcome_screen.dart';
+import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'blocs/auth/login/login_bloc.dart';
 import 'blocs/auth/register/register_bloc.dart';
 import 'blocs/home/home_bloc.dart';
@@ -27,11 +28,8 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          primaryColor: AppColors.primaryColor,
-          primarySwatch: AppColors.primarySwatch,
-        ),
-        home: const WelcomeScreen(),
+        theme: tema,
+        home: WelcomeScreen(),
       ),
     );
   }

@@ -82,9 +82,9 @@ Alınan kararlar: Uygulamanın tasarımının genel hatları kesinleşmiş, goog
 
 ---
 
-## Product Backlog URL
+## Product Backlog URL - Sprint 2 Panosu
 
-[Flutter Team 46 Trello Backlog Board](https://trello.com/invite/b/LYhHZu5h/ATTI2a04919fec9f132a7fae05afcfe79dca39429EA2/sprint-1)
+[Flutter Team 46 Trello Backlog Board](https://trello.com/invite/b/2NZzFW0m/ATTI2ea6a945babc6112738b86ff7bc1d77e752EF5A9/sprint-2)
 
 ---
 
@@ -95,10 +95,16 @@ Alınan kararlar: Uygulamanın tasarımının genel hatları kesinleşmiş, goog
 - **Sprint içinde tamamlanması tahmin edilen puan**: 42 Puan
 - **Sprint içinde tamamlanan puan**: 39 Puan
 
+<<<<<<< Updated upstream
+=======
+- **Puan tamamlama mantığı**: Puanlar ilk sprintteki strateji gibi herkese  sorularak ortak kararla verildi. <br> İkinci sprint başında toplam için 82 puanlık backlog hazırlanmış durumda, 40 puanlık kısmı ilk sprintte tamamlamıştık ikinci sprint için hedefimiz 42 puanlık iş oldu.</br>
+
+>>>>>>> Stashed changes
 -  **Daily Scrum**: Daily scrum toplantıları Discord üzerinde oluşturduğumuz sunucu üzerinden sesli olarak yapıldı. Toplantılar boyunca alınan notlar google çevirimci e-tablolarda paylaşıldı.
 <br><img src="readmeDocument/sheets.png" width="9"> [Daily Scrum Notları](https://docs.google.com/spreadsheets/d/155HReb46n69204VOSWxT96abclGTPvVfpnWJdaWamCo/edit?usp=sharing)</br>
 
 - **Sprint board update**: Sprint board screenshotları: 
+<<<<<<< Updated upstream
 ![Backlog 1](readmeDocument/sprint1_3.jpg)
 
 - **Ürün Durumu**: Ürün Durumu:
@@ -107,6 +113,16 @@ Alınan kararlar: Uygulamanın tasarımının genel hatları kesinleşmiş, goog
   
 - **Sprint Review**: 
 Alınan kararlar: Uygulamanın giriş ekranları hazırlanmış, diğer önemli sayfaların büyük bölümü hazırlanmış ve Firebase'den veriler canlı olarak çekilmiştir.  <br> Sprint Review katılımcıları: Murat Avcı, Enes Koçhan, Mert Ali Dalkır, Tuğba Yıldız
+=======
+![Backlog 1](readmeDocument/sprint2_2.jpg)
+
+- **Ürün Durumu**: Ürün Durumu:
+  ![Screenshot 1](readmeDocument/sprint2_1.jpg)
+  ![Screenshot 1](readmeDocument/sprint2_3.gif)
+  
+- **Sprint Review**: 
+ Alınan kararlar: Uygulamanın giriş ekranları hazırlanmış, diğer önemli sayfaların büyük bölümü hazırlanmış ve Firebase'den veriler canlı olarak çekilmiştir. Google maps kütüphanesiyle entegrenin tamamlanması ve database'den gelen verilerle haritaların çizdirilmesine karar verilmiştir.  <br> Sprint Review katılımcıları: Murat Avcı, Enes Koçhan, Mert Ali Dalkır, Tuğba Yıldız
+>>>>>>> Stashed changes
 
 - **Sprint Retrospective:**
   - Görev dağılımlarında ufak değişiklikler olmuştur.

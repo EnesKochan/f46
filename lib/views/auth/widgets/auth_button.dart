@@ -10,6 +10,7 @@ import '../../../blocs/auth/register/register_event.dart';
 import '../../../blocs/auth/register/register_state.dart';
 import '../../../blocs/bloc_status.dart';
 import '../../../src/app_strings.dart';
+import '../../../ui/costum_theme.dart';
 
 class AuthButton extends StatelessWidget {
   const AuthButton({Key? key, required this.formKey, required this.isLogin})

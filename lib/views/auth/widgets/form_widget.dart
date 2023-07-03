@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../../services/auth_service.dart';
 import '../../../src/app_colors.dart';
+import '../../../ui/costum_theme.dart';
 import 'email_field.dart';
 
 class FormWidget extends StatelessWidget {

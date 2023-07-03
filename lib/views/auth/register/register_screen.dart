@@ -7,6 +7,7 @@ import '../../../blocs/bloc_status.dart';
 import '../../../repository/auth/register/register_repository.dart';
 import '../../../src/app_assets.dart';
 import '../../../src/app_colors.dart';
+import '../../../ui/costum_theme.dart';
 import '../widgets/have_account_text.dart';
 import '../widgets/register_form_widget.dart';
 
@@ -16,7 +17,6 @@ class RegisterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.pageColor,
       body: BlocProvider(
         create: (context) => RegisterBloc(authRepo: RegisterRepository()),
         child: BlocListener<RegisterBloc, RegisterState>(
