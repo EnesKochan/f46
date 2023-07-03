@@ -90,9 +90,10 @@ Alınan kararlar: Uygulamanın tasarımının genel hatları kesinleşmiş, goog
 
 # Sprint 2
 
-- **Sprint Notları**: Sprint ortasına denk gelen uzun bayram tatili sebebiyle sprint süreci boyunca az toplantı yapımış ve bazı aksaklıklar meydana gelmiştir.
+- **Sprint Notları**: Sprint ortasına denk gelen uzun bayram tatili sebebiyle sprint süreci boyunca az toplantı yapılmıştır ve süreci uzatmaya yönelik bazı aksaklıklar meydana gelmiştir.
 
 - **Sprint içinde tamamlanması tahmin edilen puan**: 42 Puan
+- **Sprint içinde tamamlanan puan**: 39 Puan
 
 -  **Daily Scrum**: Daily scrum toplantıları Discord üzerinde oluşturduğumuz sunucu üzerinden sesli olarak yapıldı. Toplantılar boyunca alınan notlar google çevirimci e-tablolarda paylaşıldı.
 <br><img src="readmeDocument/sheets.png" width="9"> [Daily Scrum Notları](https://docs.google.com/spreadsheets/d/155HReb46n69204VOSWxT96abclGTPvVfpnWJdaWamCo/edit?usp=sharing)</br>
