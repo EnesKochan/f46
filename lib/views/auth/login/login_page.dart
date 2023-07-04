@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../../../src/app_colors.dart';
+import '../../../ui/costum_theme.dart';
 
 class LoginPage extends StatefulWidget {
   @override

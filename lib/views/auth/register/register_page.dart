@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../../services/auth_service.dart';
 import '../../../src/app_colors.dart';
+import '../../../ui/costum_theme.dart';
 
 class RegisterPage extends StatefulWidget {
   @override

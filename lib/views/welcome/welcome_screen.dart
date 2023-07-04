@@ -1,9 +1,9 @@
-import 'package:f46/src/app_colors.dart';
 import 'package:f46/views/auth/login/login_page.dart';
 import 'package:f46/views/auth/register/register_page.dart';
 import 'package:flutter/material.dart';
 
 import '../../../src/app_strings.dart';
+import '../../ui/costum_theme.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);

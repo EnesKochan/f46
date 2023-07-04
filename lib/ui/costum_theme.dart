@@ -3,8 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 
 
-class FigmaColors {
-  const FigmaColors();
+class AppColors {
 
   static const Color anarenk = Color(0xfff69829);
   static const Color ikincirenk = Color(0xff262835);
@@ -14,7 +13,13 @@ class FigmaColors {
   static const Color koyugri = Color(0xff636363);
   static const Color kirmizi = Color(0xffeb1d0a);
   static const Color yesil = Color(0xff6add34);
+  
+  static const Color primaryColor = Color(0xfff69829);
+  static const MaterialColor primarySwatch = Colors.orange;
+  static Color pageColor = Color(0xfff8f8f8);
+  static const Color white = Colors.white;
 
+  AppColors._();
 }
 
 
@@ -23,7 +28,7 @@ final ThemeData tema = ThemeData(
   colorScheme: const ColorScheme(
       primary: Color(0xfff69829), //Düzenlendi
       secondary: Color(0xff262835), //Düzenlendi
-      surface: Color(0xffffffff),
+      surface: Color(0xff636363),
       background: Color(0xfff8f8f8),
       error: Color(0xffeb1d0a), //Düzenlendi
       onPrimary: Color(0xffffffff),
@@ -146,5 +151,8 @@ extension TemaType on BuildContext {
   TextStyle? get xsmall => Theme.of(this).textTheme.labelLarge;
   Color? get primary => Theme.of(this).colorScheme.primary;
   Color? get secondary => Theme.of(this).colorScheme.secondary;
-
+  Color? get gri => Theme.of(this).colorScheme.surface;
+  Color? get beyaz => Theme.of(this).colorScheme.onPrimary;
+  Color? get background => Theme.of(this).colorScheme.background;
 }
+
