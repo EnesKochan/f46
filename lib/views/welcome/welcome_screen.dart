@@ -17,18 +17,65 @@ class WelcomeScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          ElevatedButton(
-            onPressed: () => _goToLogin(context),
-            child: const Text(
-              AppStrings.login,
-              style: TextStyle(color: AppColors.white),
+          Image.asset('assets/pana.png'),
+          SizedBox(height: 100),
+          Center(
+            child: RichText(
+              text: TextSpan(
+                  text: 'Yeni yerler mi keşfetmek istiyorsun?\n O zaman ',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: AppColors.ikincirenk,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  children: <TextSpan>[
+                    TextSpan(
+                      text: 'TRAVELLY',
+                      style: TextStyle(
+                          color: AppColors.anarenk,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    TextSpan(
+                      text: ' ile tam zamanı!',
+                      style: TextStyle(
+                          color: AppColors.ikincirenk,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ]),
             ),
           ),
-          ElevatedButton(
-            onPressed: () => _goToRegister(context),
-            child: const Text(
-              AppStrings.register,
-              style: TextStyle(color: AppColors.white),
+          SizedBox(height: 100),
+          Container(
+            width: 50,
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15),
+                ),
+              ),
+              onPressed: () => _goToLogin(context),
+              child: const Text(
+                AppStrings.login,
+                style: TextStyle(
+                    color: AppColors.white, fontWeight: FontWeight.bold),
+              ),
+            ),
+          ),
+          SizedBox(height: 10),
+          Center(
+            child: RichText(
+              text: TextSpan(
+                  text: 'Giriş yapmadan ',
+                  style: TextStyle(
+                      color: AppColors.ikincirenk, fontWeight: FontWeight.bold),
+                  children: <TextSpan>[
+                    TextSpan(
+                      text: 'devam et',
+                      style: TextStyle(
+                          color: AppColors.anarenk,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ]),
             ),
           ),
         ],
