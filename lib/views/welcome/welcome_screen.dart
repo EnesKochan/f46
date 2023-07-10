@@ -21,25 +21,18 @@ class WelcomeScreen extends StatelessWidget {
           SizedBox(height: 100),
           Center(
             child: RichText(
+              textAlign: TextAlign.center,
               text: TextSpan(
                   text: 'Yeni yerler mi keşfetmek istiyorsun?\n O zaman ',
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: AppColors.ikincirenk,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: context.h5,
                   children: <TextSpan>[
                     TextSpan(
                       text: 'TRAVELLY',
-                      style: TextStyle(
-                          color: AppColors.anarenk,
-                          fontWeight: FontWeight.bold),
+                      style: context.h5?.copyWith(color: AppColors.anarenk, fontWeight: FontWeight.w600),
                     ),
                     TextSpan(
                       text: ' ile tam zamanı!',
-                      style: TextStyle(
-                          color: AppColors.ikincirenk,
-                          fontWeight: FontWeight.bold),
+                      style: context.h5,
                     ),
                   ]),
             ),
@@ -50,14 +43,13 @@ class WelcomeScreen extends StatelessWidget {
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
+                  borderRadius: BorderRadius.circular(10),
                 ),
               ),
               onPressed: () => _goToLogin(context),
-              child: const Text(
+              child: Text(
                 AppStrings.login,
-                style: TextStyle(
-                    color: AppColors.white, fontWeight: FontWeight.bold),
+                style: context.paragraph?.copyWith(fontWeight: FontWeight.w600, color: AppColors.beyaz),
               ),
             ),
           ),
@@ -66,14 +58,11 @@ class WelcomeScreen extends StatelessWidget {
             child: RichText(
               text: TextSpan(
                   text: 'Giriş yapmadan ',
-                  style: TextStyle(
-                      color: AppColors.ikincirenk, fontWeight: FontWeight.bold),
+                  style: context.paragraph,
                   children: <TextSpan>[
                     TextSpan(
                       text: 'devam et',
-                      style: TextStyle(
-                          color: AppColors.anarenk,
-                          fontWeight: FontWeight.bold),
+                      style: context.paragraph?.copyWith(color: AppColors.anarenk, fontWeight: FontWeight.w600),
                     ),
                   ]),
             ),

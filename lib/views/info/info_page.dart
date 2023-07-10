@@ -1,4 +1,7 @@
+import 'package:f46/views/info/comment_tab.dart';
+import 'package:f46/views/info/widgets/comment.dart';
 import 'package:f46/views/info/widgets/sliver_appbar_delegate.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../../../../ui/costum_theme.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -18,17 +21,17 @@ class infoPage extends StatefulWidget {
 class _infoPageState extends State<infoPage> with SingleTickerProviderStateMixin {
 
   late TabController _tabController;
-  
 
   @override
   void initState() {
     _tabController = TabController(length: 3, vsync: this);
     super.initState();
-  }
+  } 
+  
+ 
 
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       body: FutureBuilder<DocumentSnapshot>(
               future: FirebaseFirestore.instance.collection('locations').doc(widget.locId).get(),
@@ -37,8 +40,11 @@ class _infoPageState extends State<infoPage> with SingleTickerProviderStateMixin
                   return Text("Bir şeyler ters gitti.");
                 }
                 if (snapshot.hasData && !snapshot.data!.exists) {
-                   return Center (
+                   return const Center (
                     child: Text("Veri bulunamadı(locId'yi kontrol et)"));
+                }
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return const CircularProgressIndicator();
                 }
                 if (snapshot.connectionState == ConnectionState.done) {
                     Map<String, dynamic> data = snapshot.data!.data() as Map<String, dynamic>;
@@ -174,11 +180,9 @@ class _infoPageState extends State<infoPage> with SingleTickerProviderStateMixin
                                     ],
                                   ),
                                 ),
-                                const Card(
-                                  margin: EdgeInsets.all(16.0),
-                                  child: Center(
-                                      child: Text('Yorumlar Eklenecek!')),
-                                ),
+                                SafeArea(
+                                top: false,
+                                child: CommentTab(locId: widget.locId),),
                                 const Card(
                                   margin: EdgeInsets.all(16.0),
                                   child: Center(
@@ -192,7 +196,7 @@ class _infoPageState extends State<infoPage> with SingleTickerProviderStateMixin
                 
                 }
 
-                return CircularProgressIndicator();
+                return const CircularProgressIndicator();
                 },
                               ),
                       

@@ -1,11 +1,56 @@
+import 'dart:convert';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:f46/ui/costum_theme.dart';
+import 'package:f46/views/home/widgets/like_button.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class SmallCard extends StatelessWidget {
-  final String baslik;
-  final String konum;
-  final String imgUrl;
-  const SmallCard({super.key, required this.baslik, required this.konum, required this.imgUrl});
+class SmallCard extends StatefulWidget {
+    final String baslik;
+    final String konum;
+    final String imgUrl;
+    final List<String> likes;
+    final String locId;
+  SmallCard({super.key, 
+      required this.baslik, 
+      required this.konum, 
+      required this.imgUrl,  
+      required this.likes, 
+      required this.locId});
+
+  @override
+  State<SmallCard> createState() => _SmallCardState();
+}
+
+class _SmallCardState extends State<SmallCard> {
+
+  final currentUser = FirebaseAuth.instance.currentUser!;
+  bool isLiked = false;
+
+  @override
+  void initState(){
+    super.initState();
+    isLiked = widget.likes.contains(currentUser.email);
+  }
+  void toggleLike(){
+    setState(() {
+      isLiked = !isLiked;
+    });
+
+    DocumentReference postRef = FirebaseFirestore.instance.collection("locations").doc(widget.locId);
+
+  if (isLiked) {
+    postRef.update({
+      'Likes': FieldValue.arrayUnion([currentUser.email])
+    });
+  } else {
+      postRef.update({
+        'Likes': FieldValue.arrayRemove([currentUser.email])
+      });
+  }
+
+  }
 
 
   @override
@@ -25,7 +70,7 @@ class SmallCard extends StatelessWidget {
                             SizedBox(
                               height: 126,
                               width: 220,
-                              child: Image.network(imgUrl, fit: BoxFit.cover,),
+                              child: Image.network(widget.imgUrl, fit: BoxFit.cover,),
                               ),
                               Padding(
                                 padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
@@ -37,17 +82,23 @@ class SmallCard extends StatelessWidget {
                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
-                                      Text(baslik, style: context.paragraph?.copyWith(fontWeight: FontWeight.w500),),
+                                      Text(widget.baslik, style: context.paragraph?.copyWith(fontWeight: FontWeight.w500),),
                                          Row(
                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                          children: [
                                           Row(
                                             children: [
                                               Icon(Icons.location_on, size: 16,),
-                                              Text(konum, style: context.xsmall?.copyWith(color: context.gri),),
+                                              Text(widget.konum, style: context.xsmall?.copyWith(color: context.gri),),
                                              ],
                                           ),
-                                          Icon(Icons.favorite, size: 20,),
+                                          Row(
+                                            children: [
+                                              Text(widget.likes.length.toString()),
+                                              SizedBox(width: 4,),
+                                              LikeButton(isLiked: isLiked, onTap: toggleLike),
+                                            ],
+                                          ),
                                           ],
                                         ),
                                       ],

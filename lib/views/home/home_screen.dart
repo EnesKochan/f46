@@ -1,5 +1,7 @@
 import 'package:f46/ui/costum_theme.dart';
+import 'package:f46/views/home/widgets/costum_navbar.dart';
 import 'package:f46/views/home/widgets/fullwidth_card.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../info/info_page.dart';
 import '../../widgets/costum_appbar.dart';
@@ -15,11 +17,18 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+    
+
+final pPhoto = FirebaseAuth.instance.currentUser!.photoURL!;
+
+
+
   @override
   Widget build(BuildContext context) {
-
+    final User? user = ModalRoute.of(context)?.settings.arguments as User?;
     return Scaffold(
-      appBar: CostumAppbar(),
+      appBar: CostumAppbar(pPhoto: pPhoto),
+      bottomNavigationBar: CostumNavBar(),
       body:Padding(
           padding: EdgeInsets.only(left: 20, top: 20),
           child: CustomScrollView(
@@ -53,7 +62,11 @@ class _HomeScreenState extends State<HomeScreen> {
                           return Text("Bir şeyler ters gitti.");
                         }
                         if(snapshot.connectionState == ConnectionState.waiting){
-                           return CircularProgressIndicator();
+                           return Scaffold(
+                            body: Center(
+                              child: CircularProgressIndicator(),
+                            ),
+                           );
                         }
                         if(snapshot.data!.docs.isEmpty){
                           return Text("Geçerli veri bulunamadı");
@@ -70,9 +83,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                       infoPage(locId: locId),),);
                                   },
                                   child: SmallCard(
+                                    locId: locId,
                                     baslik: snapshot.data!.docs[index]['title'], 
                                     konum: snapshot.data!.docs[index]['konum'], 
-                                    imgUrl: snapshot.data!.docs[index]['img']
+                                    imgUrl: snapshot.data!.docs[index]['img'], 
+                                    likes: List<String>.from(snapshot.data!.docs[index]['Likes']),
                                   ),
                               );
                             }
@@ -163,4 +178,5 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
 

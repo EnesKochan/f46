@@ -1,12 +1,13 @@
 import 'package:f46/ui/costum_theme.dart';
+import 'package:f46/views/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class CostumAppbar extends StatelessWidget implements PreferredSizeWidget {
+  final String pPhoto;
   const CostumAppbar({
-    super.key,
+    super.key, required this.pPhoto,
   });
-
   @override
   Size get preferredSize =>  Size.fromHeight(80);
   
@@ -15,18 +16,33 @@ class CostumAppbar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       centerTitle: false,
       systemOverlayStyle: SystemUiOverlayStyle.dark, //Statusbar dark
-      flexibleSpace: const Image(
-        image: NetworkImage('https://i.ibb.co/Z6N4RwW/appbar-Back.jpg'), //Appbar arkaplan
-        fit: BoxFit.cover,
-      ),
+      flexibleSpace: Container(
+          decoration: const BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  blurRadius: 4,
+                  color: Colors.grey,
+                  offset: Offset(
+                        0,
+                        0.75,
+                      ),
+                )
+              ],
+              image: DecorationImage(
+                    image: NetworkImage('https://i.ibb.co/Z6N4RwW/appbar-Back.jpg'), //Appbar arkaplan
+                      fit: BoxFit.cover,
+                    ),
+                    ),
+          ),
       //backgroundColor: Colors.transparent, 
       toolbarHeight: 80,
-      elevation: 4,
+      elevation: 3,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
             bottomRight: Radius.circular(10),
             bottomLeft: Radius.circular(10)), //Border app bar
       ),
+      shadowColor: AppColors.ikincirenk,
       title: 
         Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -38,20 +54,30 @@ class CostumAppbar extends StatelessWidget implements PreferredSizeWidget {
          ),
       leading: 
           Padding(
-            padding: const EdgeInsets.only(left: 20),
+            padding: const EdgeInsets.only(left: 6),
               child: IconButton(
-                  icon: Icon(Icons.location_on, size: 45, color: context.primary,),
+                  icon: const Icon(Icons.location_on, size: 45, color: AppColors.anarenk,),
                   onPressed: () {},
                   ),
           ),
+        leadingWidth: 40,
       actions: [
           Padding(
-            padding: const EdgeInsets.only(right: 20),
-            child: CircleAvatar(
+            padding: EdgeInsets.only(right: 20),
+            child: 
+                  InkWell(
+                    onTap: (){
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => ProfileScreen()),);
+                    } ,
+                    child: CircleAvatar(
                       radius: 25,
-                      backgroundColor: context.secondary,
-                      child: Text('MA'),
+                      backgroundColor: AppColors.anarenk,
+                      child: CircleAvatar(
+                        radius: 23,
+                        backgroundImage: NetworkImage(pPhoto),
+                      ),
                     ),
+                  ),
           )
         ],
     );

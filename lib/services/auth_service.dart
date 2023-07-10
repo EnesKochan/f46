@@ -1,5 +1,11 @@
+
+
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:f46/views/auth/login/login_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -14,20 +20,67 @@ class AuthService {
 
   //çıkış yap fonksiyonu
   signOut() async {
-    return await _auth.signOut();
+    await _auth.signOut();
   }
 
   //kayıt ol fonksiyonu
   Future<User?> createPerson(
-      String name, String surName, String email, String password) async {
+      String name, 
+      String surName, 
+      String email, 
+      String password,) async {
     var user = await _auth.createUserWithEmailAndPassword(
-        email: email, password: password);
-
+        email: email, 
+        password: password,);
+    await _auth.currentUser?.updateDisplayName(name + surName);
+    await _auth.currentUser?.updatePhotoURL("https://img.freepik.com/free-icon/user_318-159711.jpg");
     await _firestore
         .collection("Person")
         .doc(user.user?.uid)
-        .set({'name': name, 'surName': surName, 'email': email});
+        .set({'name': name, 
+              'surName': surName,
+              'email': email, 
+              'takipci': 0,
+              'takipEdilen': 0,
+              'begeni': 0,
+              'sehir': "İstanbul",
+              'ilce': "Kadıköy"});
 
     return user.user;
   }
+
+
+
+
+  // google sign in
+
+ Future<User?> signInWithGoogle() async {
+  final GoogleSignInAccount? gUser = await GoogleSignIn().signIn();
+
+  final GoogleSignInAuthentication gAuth =await gUser!.authentication;
+
+  final credential = GoogleAuthProvider.credential(accessToken: gAuth.accessToken, idToken: gAuth.idToken);
+
+  final UserCredential userCredential = await FirebaseAuth.instance.signInWithCredential(credential);
+  
+  return userCredential.user;
+  }
+
+}
+
+// google profil fotoğrafı
+
+
+
+
+// google sign in
+
+ signInWithGoogle() async {
+  final GoogleSignInAccount? gUser = await GoogleSignIn().signIn();
+
+  final GoogleSignInAuthentication gAuth =await gUser!.authentication;
+
+  final credential = GoogleAuthProvider.credential(accessToken: gAuth.accessToken, idToken: gAuth.idToken);
+  
+  return await FirebaseAuth.instance.signInWithCredential(credential);
 }

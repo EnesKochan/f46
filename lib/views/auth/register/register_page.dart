@@ -1,9 +1,13 @@
+import 'package:f46/views/auth/register/register_done.dart';
 import 'package:f46/views/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../../../services/auth_service.dart';
+import '../../../ui/costum_input.dart';
 import '../../../ui/costum_theme.dart';
-import '../../../ui/decoration.dart';
+
+
 
 class RegisterPage extends StatefulWidget {
   @override
@@ -21,112 +25,135 @@ class _RegisterPageState extends State<RegisterPage> {
   bool _obscureText = true;
 
   AuthService _authService = AuthService();
+  
 
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        systemOverlayStyle: SystemUiOverlayStyle.dark,
+        leading: Padding(
+          padding: EdgeInsets.only(top: 17),
+          child:
+            IconButton(
+            icon: Icon(Icons.arrow_back_ios_new_outlined, color: AppColors.anarenk, size: 30),
+            onPressed: (){
+              Navigator.pop(context);
+            },
+            ),
+          
+        ),
+      ),
       resizeToAvoidBottomInset: true,
       body: SingleChildScrollView(
-        child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
-          decoration: BoxDecoration(
-            color: AppColors.white,
-            borderRadius: BorderRadius.circular(10),
-          ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Form(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image(image: AssetImage('assets/pana.png')),
-                SizedBox(height: 20),
+                const Image(image: AssetImage('assets/pana.png')),
+                const SizedBox(height: 20),
                 Row(
                   children: [
+                    
                     Text(
                       'Kayıt Ol',
-                      style: TextStyle(
-                        color: AppColors.ikincirenk,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 26,
-                      ),
+                      style: context.h4?.copyWith(fontWeight: FontWeight.w600)
                     ),
                   ],
                 ),
-                SizedBox(height: 20),
-                Container(
-                  decoration: CustomBoxDecoration.getDecoration(),
-                  child: TextField(
-                      controller: _nameController,
-                      decoration: InputDecoration(
-                        prefixIcon: Icon(
-                          Icons.person_outline_sharp,
-                          color: Colors.orange,
-                        ),
-                        hintText: 'Ad',
-                      )),
-                ),
+                const SizedBox(height: 20),
+                TextField(
+                    controller: _nameController,
+                    decoration: InputDecoration(
+                      focusedBorder: CostumInput.Focus,
+                                    enabledBorder: CostumInput.Enabled,
+                                    filled: true,
+                                    fillColor: AppColors.beyaz,
+                      prefixIcon: const Icon(
+                        Icons.person_outline_sharp,
+                        color: Colors.orange,
+                      ),
+                      labelText: 'Ad',
+                      labelStyle: context.paragraph?.copyWith(color: AppColors.koyugri),
+                      floatingLabelStyle: context.h5?.copyWith(color: AppColors.anarenk, fontWeight: FontWeight.w800),
+                    )),
                 SizedBox(
                   height: size.height * 0.02,
                 ),
-                Container(
-                  decoration: CustomBoxDecoration.getDecoration(),
-                  child: TextField(
-                      controller: _surnameController,
-                      decoration: InputDecoration(
-                        prefixIcon: Icon(
-                          Icons.person,
-                          color: Colors.orange,
-                        ),
-                        hintText: 'Soyad',
-                      )),
-                ),
+                TextField(
+                    controller: _surnameController,
+                    decoration: InputDecoration(
+                      focusedBorder: CostumInput.Focus,
+                                    enabledBorder: CostumInput.Enabled,
+                                    filled: true,
+                                    fillColor: AppColors.beyaz,
+                      prefixIcon: const Icon(
+                        Icons.person,
+                        color: Colors.orange,
+                      ),
+                      labelText: 'Soyad',
+                      labelStyle: context.paragraph?.copyWith(color: AppColors.koyugri),
+                      floatingLabelStyle: context.h5?.copyWith(color: AppColors.anarenk, fontWeight: FontWeight.w800),
+                    )),
                 SizedBox(
                   height: size.height * 0.02,
                 ),
-                Container(
-                  decoration: CustomBoxDecoration.getDecoration(),
-                  child: TextField(
-                      controller: _emailController,
-                      decoration: InputDecoration(
-                        prefixIcon: Icon(
-                          Icons.mail,
-                          color: Colors.orange,
-                        ),
-                        hintText: 'E-Mail',
-                      )),
-                ),
+                TextField(
+                    controller: _emailController,
+                    decoration: InputDecoration(
+                      focusedBorder: CostumInput.Focus,
+                                    enabledBorder: CostumInput.Enabled,
+                                    filled: true,
+                                    fillColor: AppColors.beyaz,
+                      prefixIcon: const Icon(
+                        Icons.mail,
+                        color: Colors.orange,
+                      ),
+                      labelText: 'E-Mail',
+                      labelStyle: context.paragraph?.copyWith(color: AppColors.koyugri),
+                      floatingLabelStyle: context.h5?.copyWith(color: AppColors.anarenk, fontWeight: FontWeight.w800),
+                    )),
                 SizedBox(
                   height: size.height * 0.02,
                 ),
-                Container(
-                  decoration: CustomBoxDecoration.getDecoration(),
-                  child: TextField(
-                      controller: _passwordController,
-                      obscureText: _obscureText,
-                      decoration: InputDecoration(
-                        suffixIcon: IconButton(
-                          icon: Icon(
-                            color: AppColors.anarenk,
-                            _obscureText
-                                ? Icons.visibility
-                                : Icons.visibility_off,
-                          ),
-                          onPressed: () {
-                            setState(() {
-                              _obscureText = !_obscureText;
-                            });
-                          },
+                TextField(
+                    controller: _passwordController,
+                    obscureText: _obscureText,
+                    decoration: InputDecoration(
+                      focusedBorder: CostumInput.Focus,
+                                    enabledBorder: CostumInput.Enabled,
+                                    filled: true,
+                                    fillColor: AppColors.beyaz,
+                      suffixIcon: IconButton(
+                        icon: Icon(
+                          color: AppColors.anarenk,
+                          _obscureText
+                              ? Icons.visibility
+                              : Icons.visibility_off,
                         ),
-                        prefixIcon: Icon(
-                          Icons.vpn_key,
-                          color: Colors.orange,
-                        ),
-                        hintText: 'Parola',
-                      )),
-                ),
+                        onPressed: () {
+                          setState(() {
+                            _obscureText = !_obscureText;
+                          });
+                        },
+                      ),
+                      prefixIcon: Icon(
+                        Icons.vpn_key,
+                        color: Colors.orange,
+                      ),
+                      labelText: 'Parola',
+                      labelStyle: context.paragraph?.copyWith(color: AppColors.koyugri),
+                      floatingLabelStyle: context.h5?.copyWith(color: AppColors.anarenk, fontWeight: FontWeight.w800),
+                    )),
                 SizedBox(height: size.height * 0.05),
+                
                 Container(
-                  width: 200,
+                  width: 240,
                   height: 40,
                   child: ElevatedButton(
                     onPressed: () {
@@ -140,7 +167,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         return Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => WelcomeScreen()));
+                                builder: (context) => RegisterDone()));
                       });
                     },
                     style: ElevatedButton.styleFrom(
@@ -149,7 +176,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       ),
                     ),
                     child:
-                        Text('Kaydol', style: TextStyle(color: Colors.white)),
+                        Text('Kaydol', style: context.paragraph?.copyWith(color: AppColors.beyaz)),
                   ),
                 ),
                 SizedBox(
@@ -160,6 +187,7 @@ class _RegisterPageState extends State<RegisterPage> {
           ),
         ),
       ),
+      
     );
   }
 }

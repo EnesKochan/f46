@@ -102,7 +102,8 @@ Alınan kararlar: Uygulamanın tasarımının genel hatları kesinleşmiş, goog
 <br><img src="readmeDocument/sheets.png" width="9"> [Daily Scrum Notları](https://docs.google.com/spreadsheets/d/155HReb46n69204VOSWxT96abclGTPvVfpnWJdaWamCo/edit?usp=sharing)</br>
 
 - **Sprint board update**: Sprint board screenshotları: 
-  ![Backlog 1](readmeDocument/sprint2_2.jpg)
+
+![Backlog 1](readmeDocument/sprint2_2.jpg)
 
 - **Ürün Durumu**: Ürün Durumu:
   ![Screenshot 1](readmeDocument/sprint2_1.jpg)
