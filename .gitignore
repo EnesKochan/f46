@@ -44,6 +44,5 @@ app.*.map.json
 /android/app/release
 
 # Google API key and other resources
-.ios/Runner/GoogleService-Info.plist
-.GoogleService-Info.plist
-.google-services.json
+ios/Runner/GoogleService-Info.plist
+android/app/google-services.json
