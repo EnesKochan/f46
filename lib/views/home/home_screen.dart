@@ -19,18 +19,19 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
     
 
-final pPhoto = FirebaseAuth.instance.currentUser!.photoURL!;
-
+final pPhoto = FirebaseAuth.instance.currentUser?.photoURL ?? 'https://firebasestorage.googleapis.com/v0/b/travelly-90e1c.appspot.com/o/AnonimPhoto.jpg?alt=media&token=1507d6e6-47da-4a5f-95dc-3c717cd39180';
+final currentUser = FirebaseAuth.instance.currentUser;
 
 
   @override
   Widget build(BuildContext context) {
     final User? user = ModalRoute.of(context)?.settings.arguments as User?;
     return Scaffold(
-      appBar: CostumAppbar(pPhoto: pPhoto),
-      bottomNavigationBar: CostumNavBar(),
+      appBar:  CostumAppbar(pPhoto: pPhoto,),
+        
+      bottomNavigationBar: const CostumNavBar(),
       body:Padding(
-          padding: EdgeInsets.only(left: 20, top: 20),
+          padding: const EdgeInsets.only(left: 20, top: 20),
           child: CustomScrollView(
                 slivers: [
                   SliverToBoxAdapter(
@@ -59,17 +60,17 @@ final pPhoto = FirebaseAuth.instance.currentUser!.photoURL!;
                     builder: (context, snapshot){
                         
                         if(snapshot.hasError){
-                          return Text("Bir şeyler ters gitti.");
+                          return const Text("Bir şeyler ters gitti.");
                         }
                         if(snapshot.connectionState == ConnectionState.waiting){
-                           return Scaffold(
+                           return const Scaffold(
                             body: Center(
                               child: CircularProgressIndicator(),
                             ),
                            );
                         }
                         if(snapshot.data!.docs.isEmpty){
-                          return Text("Geçerli veri bulunamadı");
+                          return const Text("Geçerli veri bulunamadı");
                         }
                         return ListView.builder(
                           scrollDirection: Axis.horizontal,
@@ -80,7 +81,7 @@ final pPhoto = FirebaseAuth.instance.currentUser!.photoURL!;
                               InkWell(
                                   onTap: () {
                                     Navigator.push(context,MaterialPageRoute(builder: (context) => 
-                                      infoPage(locId: locId),),);
+                                      infoPage(locId: locId, colId: 'locations',),),);
                                   },
                                   child: SmallCard(
                                     locId: locId,
@@ -127,33 +128,35 @@ final pPhoto = FirebaseAuth.instance.currentUser!.photoURL!;
                         return StreamBuilder(
                           
                     stream: FirebaseFirestore.instance
-                    .collection("locations")
+                    .collection("routes")
                     .snapshots(),
                     builder: (context, snapshot){
                         
                         if(snapshot.hasError){
-                          return Text("Bir şeyler ters gitti.");
+                          return const Text("Bir şeyler ters gitti.");
                         }
                         if(snapshot.connectionState == ConnectionState.waiting){
-                           return CircularProgressIndicator();
+                           return const CircularProgressIndicator();
                         }
                         if(snapshot.data!.docs.isEmpty){
-                          return Text("Geçerli veri bulunamadı");
+                          return const Text("Geçerli veri bulunamadı");
                         }
                         return ListView.builder(
                           scrollDirection: Axis.vertical,
                           itemCount: snapshot.data!.docs.length,
                           itemBuilder: ((context, index) {
-                            final locId = snapshot.data!.docs[index].id;
+                            final rotId = snapshot.data!.docs[index].id;
                             return 
                               Padding(
-                                  padding: EdgeInsets.only(right: 18),
+                                  padding: const EdgeInsets.only(right: 18),
                                   child: InkWell(
                                       onTap: () {
                                         Navigator.push(context,MaterialPageRoute(builder: (context) => 
-                                          infoPage(locId: locId),),);
+                                          infoPage(locId: rotId, colId: 'routes',),),);
                                       },
                                       child: FullWidthCard(
+                                        likes: List<String>.from(snapshot.data!.docs[index]['Likes']),
+                                        locId: rotId,
                                         baslik: snapshot.data!.docs[index]['title'], 
                                         konum: snapshot.data!.docs[index]['konum'], 
                                         imgUrl: snapshot.data!.docs[index]['img']

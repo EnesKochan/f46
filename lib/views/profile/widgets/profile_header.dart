@@ -1,20 +1,22 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
+import '../../../services/auth_service.dart';
 import '../../../ui/costum_theme.dart';
+import '../../auth/login/login_page.dart';
 import 'header_bottom.dart';
 import 'header_title.dart';
 
  class ProfileHeader extends StatefulWidget implements PreferredSizeWidget {
-  const ProfileHeader({
-    super.key,
+  void Function()? onTap;
+  ProfileHeader({
+    super.key, required this.onTap
   });
 
   @override
   State<ProfileHeader> createState() => _ProfileHeaderState();
   @override
-  Size get preferredSize =>  Size.fromHeight(250);
+  Size get preferredSize =>  const Size.fromHeight(250);
 }
 
 class _ProfileHeaderState extends State<ProfileHeader> {
@@ -65,19 +67,38 @@ class _ProfileHeaderState extends State<ProfileHeader> {
           ),
       actions: [
         Padding(
-            padding: const EdgeInsets.only(right: 16, top: 8),
-              child: Column(
-                children: [
-                  IconButton(
-                          icon: Icon(Icons.share, color: context.secondary, size: 30,),
-                          onPressed: () {},
-                          ),
-                ],
-              ),
-          ),
+            padding: const EdgeInsets.only(left: 8, bottom: 94),
+              child: 
+          PopupMenuButton(
+              icon: Icon(Icons.more_vert, color: context.secondary, size: 30,),
+              itemBuilder: (context){
+                return [
+                      PopupMenuItem<int>(
+                        onTap: widget.onTap,
+                          value: 0,
+                          child: const Text("Ayarlar"),
+                      ),
+
+                      PopupMenuItem<int>(
+                        onTap: () async {
+                        AuthService().signOut().then((value) => Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const LoginPage(), settings: RouteSettings(arguments: value)))); 
+                        },
+                          value: 1,
+                          child: const Text("Çıkış Yap"),
+                      ),
+                  ];
+              },
+              onSelected:(value){
+                if(value == 0){
+                    print("Ayarlara tıklandı");
+                }else if(value == 1){
+                    print("çıkış yapıldı");
+                }
+              }
+            ), ),
       ],
-      title: HeaderTitle(name: "Murat", sehir: "İstanbul", ilce: currentUser.email!),
-      bottom: HeaderDetails(takipci: 12, takipEdilen: 32, begeni: 32),
+      title: HeaderTitle(name: currentUser.displayName!, sehir: "İstanbul", ilce: "Kadıköy"),
+      bottom: const HeaderDetails(takipci: 3, takipEdilen: 2, begeni: 2),
     );
   }
 }

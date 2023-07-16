@@ -1,10 +1,5 @@
-
-
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:f46/views/auth/login/login_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthService {
@@ -32,7 +27,7 @@ class AuthService {
     var user = await _auth.createUserWithEmailAndPassword(
         email: email, 
         password: password,);
-    await _auth.currentUser?.updateDisplayName(name + surName);
+    await _auth.currentUser?.updateDisplayName(name + "" + surName);
     await _auth.currentUser?.updatePhotoURL("https://img.freepik.com/free-icon/user_318-159711.jpg");
     await _firestore
         .collection("Person")
@@ -83,4 +78,18 @@ class AuthService {
   final credential = GoogleAuthProvider.credential(accessToken: gAuth.accessToken, idToken: gAuth.idToken);
   
   return await FirebaseAuth.instance.signInWithCredential(credential);
+}
+
+// anonim giriş
+
+Future<void> signInAnonymously() async {
+  try {
+    UserCredential userCredential = await FirebaseAuth.instance.signInAnonymously();
+    User? user = userCredential.user;
+    if (user != null) {
+      // Anonim kullanıcı girişi başarılı oldu, istediğiniz işlemleri gerçekleştirebilirsiniz.
+    }
+  } catch (e) {
+    print('Anonim kullanıcı girişi başarısız: $e');
+  }
 }

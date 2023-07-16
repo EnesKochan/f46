@@ -5,6 +5,8 @@ class AppAssets {
   static const String man = "assets/man.jpg";
   static const String yazi = "assets/yazi.jpg";
   static const String map = "assets/map.jpg";
+  static const String navpana = "assets/pana-nav.png";
+  static const String hongpana = "assets/pana-hong.png";
 
   AppAssets._();
 }

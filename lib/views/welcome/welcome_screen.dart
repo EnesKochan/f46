@@ -18,7 +18,7 @@ class WelcomeScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Image.asset('assets/pana.png'),
-          SizedBox(height: 100),
+          const SizedBox(height: 100),
           Center(
             child: RichText(
               textAlign: TextAlign.center,
@@ -37,8 +37,8 @@ class WelcomeScreen extends StatelessWidget {
                   ]),
             ),
           ),
-          SizedBox(height: 100),
-          Container(
+          const SizedBox(height: 100),
+          SizedBox(
             width: 50,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
@@ -53,7 +53,7 @@ class WelcomeScreen extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Center(
             child: RichText(
               text: TextSpan(
@@ -82,7 +82,7 @@ class WelcomeScreen extends StatelessWidget {
   void _goToLogin(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => LoginPage()),
+      MaterialPageRoute(builder: (context) => const LoginPage()),
     );
   }
 }

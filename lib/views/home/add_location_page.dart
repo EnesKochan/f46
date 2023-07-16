@@ -86,7 +86,7 @@ class _AddLocationPageState extends State<AddLocationPage> {
                       ),
                     ),
                     child:
-                        Text('Kaydet')),
+                        const Text('Kaydet')),
       ]
                   ),
       )

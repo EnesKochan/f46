@@ -6,7 +6,6 @@ import '../../../blocs/auth/login/login_state.dart';
 import '../../../blocs/bloc_status.dart';
 import '../../../repository/auth/login/login_repository.dart';
 import '../../../src/app_assets.dart';
-import '../../../src/app_colors.dart';
 import '../../../ui/costum_theme.dart';
 import '../../home/home_screen.dart';
 import '../widgets/form_widget.dart';
@@ -41,8 +40,8 @@ class LoginScreen extends StatelessWidget {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Container(height: 300, child: Image.asset(AppAssets.man)),
-                    SizedBox(height: 20),
+                    SizedBox(height: 300, child: Image.asset(AppAssets.man)),
+                    const SizedBox(height: 20),
                     FormWidget(isLogin: true),
                     const SizedBox(height: 10),
                     const HaveAccountText(isLogin: true),

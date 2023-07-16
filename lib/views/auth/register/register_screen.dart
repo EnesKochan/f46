@@ -6,8 +6,6 @@ import '../../../blocs/auth/register/register_state.dart';
 import '../../../blocs/bloc_status.dart';
 import '../../../repository/auth/register/register_repository.dart';
 import '../../../src/app_assets.dart';
-import '../../../src/app_colors.dart';
-import '../../../ui/costum_theme.dart';
 import '../widgets/have_account_text.dart';
 import '../widgets/register_form_widget.dart';
 

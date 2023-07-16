@@ -8,14 +8,14 @@ class HeaderDetails extends StatelessWidget implements PreferredSizeWidget {
   const HeaderDetails({super.key, required this.takipci, required this.takipEdilen, required this.begeni});
 
    @override
-  Size get preferredSize =>  Size.fromHeight(50);
+  Size get preferredSize =>  const Size.fromHeight(50);
 
   @override
   Widget build(BuildContext context) {
     return PreferredSize(
-        preferredSize: Size.fromHeight(50),
+        preferredSize: const Size.fromHeight(50),
         child: Padding(
-          padding: EdgeInsets.only(right: 22, left: 22, bottom: 18),
+          padding: const EdgeInsets.only(right: 22, left: 22, bottom: 18),
           child: 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

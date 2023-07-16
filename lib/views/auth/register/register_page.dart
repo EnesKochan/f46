@@ -1,5 +1,4 @@
 import 'package:f46/views/auth/register/register_done.dart';
-import 'package:f46/views/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -19,8 +18,7 @@ class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _passwordAgainController =
-      TextEditingController();
+  
 
   bool _obscureText = true;
 
@@ -36,10 +34,10 @@ class _RegisterPageState extends State<RegisterPage> {
         elevation: 0,
         systemOverlayStyle: SystemUiOverlayStyle.dark,
         leading: Padding(
-          padding: EdgeInsets.only(top: 17),
+          padding: const EdgeInsets.only(top: 17),
           child:
             IconButton(
-            icon: Icon(Icons.arrow_back_ios_new_outlined, color: AppColors.anarenk, size: 30),
+            icon: const Icon(Icons.arrow_back_ios_new_outlined, color: AppColors.anarenk, size: 30),
             onPressed: (){
               Navigator.pop(context);
             },
@@ -142,7 +140,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           });
                         },
                       ),
-                      prefixIcon: Icon(
+                      prefixIcon: const Icon(
                         Icons.vpn_key,
                         color: Colors.orange,
                       ),
@@ -167,7 +165,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         return Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => RegisterDone()));
+                                builder: (context) => const RegisterDone()));
                       });
                     },
                     style: ElevatedButton.styleFrom(

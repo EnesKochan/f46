@@ -1,5 +1,7 @@
 import 'package:f46/ui/costum_theme.dart';
 import 'package:f46/views/profile/profile_screen.dart';
+import 'package:f46/widgets/anonim_alert.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -9,7 +11,7 @@ class CostumAppbar extends StatelessWidget implements PreferredSizeWidget {
     super.key, required this.pPhoto,
   });
   @override
-  Size get preferredSize =>  Size.fromHeight(80);
+  Size get preferredSize =>  const Size.fromHeight(80);
   
   @override
   Widget build(BuildContext context) {
@@ -63,12 +65,22 @@ class CostumAppbar extends StatelessWidget implements PreferredSizeWidget {
         leadingWidth: 40,
       actions: [
           Padding(
-            padding: EdgeInsets.only(right: 20),
+            padding: const EdgeInsets.only(right: 20),
             child: 
                   InkWell(
-                    onTap: (){
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => ProfileScreen()),);
-                    } ,
+                    onTap: () {
+    final currentUser = FirebaseAuth.instance.currentUser;
+    if (currentUser != null && currentUser is User && currentUser.isAnonymous) {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AnonimAlert();
+        },
+      );
+    } else {
+      Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ProfileScreen()));
+    }
+  },
                     child: CircleAvatar(
                       radius: 25,
                       backgroundColor: AppColors.anarenk,
@@ -83,3 +95,5 @@ class CostumAppbar extends StatelessWidget implements PreferredSizeWidget {
     );
   }
 }
+
+

@@ -50,10 +50,10 @@ class FormRegWidget extends StatelessWidget {
                     return Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => WelcomeScreen()));
+                            builder: (context) => const WelcomeScreen()));
                   });
                 },
-                child: Text('Kaydol'))
+                child: const Text('Kaydol'))
           ],
         ),
       ),

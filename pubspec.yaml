@@ -49,6 +49,11 @@ dependencies:
   equatable: ^2.0.5
   provider: ^6.0.5
   lottie: ^2.4.0
+  smooth_page_indicator: ^1.1.0
+  cached_network_image: ^3.2.3
+  sqflite: ^2.2.8+4
+  flutter_map: ^5.0.0
+  latlong2: ^0.9.0
   
 
 

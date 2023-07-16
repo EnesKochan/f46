@@ -40,7 +40,7 @@ class _RegisterDoneState extends State<RegisterDone> {
 
 Route _createRoute() {
   return PageRouteBuilder(
-    pageBuilder: (context, animation, secondaryAnimation) => LoginPage(),
+    pageBuilder: (context, animation, secondaryAnimation) => const LoginPage(),
     transitionsBuilder: (context, animation, secondaryAnimation, child) {
       const begin = Offset(0.0, 1.0);
       const end = Offset.zero;

@@ -3,9 +3,7 @@ import 'package:f46/views/auth/widgets/password_field.dart';
 import 'package:f46/views/welcome/welcome_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
 import '../../../services/auth_service.dart';
-import '../../../src/app_colors.dart';
 import '../../../ui/costum_theme.dart';
 import 'email_field.dart';
 
@@ -26,7 +24,7 @@ class FormWidget extends StatelessWidget {
               email: e.cont.emailController.text,
               password: p.cont.passwordController.text);
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => WelcomeScreen()));
+          context, MaterialPageRoute(builder: (context) => const WelcomeScreen()));
       print('Giriş başarılı: ${userCredential.user}');
     } catch (e) {
       print('Giriş hatalı: $e');
@@ -34,11 +32,11 @@ class FormWidget extends StatelessWidget {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            title: Text('Hata'),
-            content: Text('Email ya da şifre hatalı girdiniz!'),
+            title: const Text('Hata'),
+            content: const Text('Email ya da şifre hatalı girdiniz!'),
             actions: [
               TextButton(
-                child: Text('Tamam'),
+                child: const Text('Tamam'),
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
@@ -67,12 +65,12 @@ class FormWidget extends StatelessWidget {
           children: [
             EmailField(isLogin: isLogin),
             PasswordField(isLogin: isLogin),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Row(
               children: [
                 InkWell(
                   onTap: () {},
-                  child: Icon(
+                  child: const Icon(
                     Icons.check_box_outline_blank,
                     color: Colors.orange,
                   ),
@@ -81,7 +79,7 @@ class FormWidget extends StatelessWidget {
                   'Şifremi hatırla',
                   style: TextStyle(color: Colors.grey.shade700),
                 ),
-                SizedBox(width: 85),
+                const SizedBox(width: 85),
                 Text(
                   'Şifremi unuttum',
                   style: TextStyle(color: Colors.grey.shade700),
@@ -95,7 +93,7 @@ class FormWidget extends StatelessWidget {
               onPressed: () {
                 signIn(context);
               },
-              child: Text(
+              child: const Text(
                 'Giriş Yap',
                 style: TextStyle(color: Colors.white),
               ),

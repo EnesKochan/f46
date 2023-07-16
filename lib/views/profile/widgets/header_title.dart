@@ -28,6 +28,6 @@ class _HeaderTitleState extends State<HeaderTitle> {
         const SizedBox(height: 8,),
         Text(widget.name, style: context.paragraph?.copyWith(fontWeight: FontWeight.w600),),
         Text("${widget.sehir} , ${widget.ilce}", style: context.small,)
-      ]);;
+      ]);
   }
 }

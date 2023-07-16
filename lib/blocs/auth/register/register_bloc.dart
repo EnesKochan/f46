@@ -30,7 +30,7 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
 
       try {
         await authRepo?.register();
-        emit(state.copyWith(appStatus: SubmissionSuccess()));
+        emit(state.copyWith(appStatus: const SubmissionSuccess()));
       } catch (e) {
         emit(state.copyWith(appStatus: SubmissionFailed(e)));
       }

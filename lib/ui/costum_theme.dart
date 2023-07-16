@@ -16,7 +16,7 @@ class AppColors {
   
   static const Color primaryColor = Color(0xfff69829);
   static const MaterialColor primarySwatch = Colors.orange;
-  static Color pageColor = Color(0xfff8f8f8);
+  static Color pageColor = const Color(0xfff8f8f8);
   static const Color white = Colors.white;
 
   AppColors._();
@@ -24,7 +24,7 @@ class AppColors {
 
 
 final ThemeData tema = ThemeData(
-  primaryColor: Color(0xfff69829), //Yedek eklendi
+  primaryColor: const Color(0xfff69829), //Yedek eklendi
   colorScheme: const ColorScheme(
       primary: Color(0xfff69829), //Düzenlendi
       secondary: Color(0xff262835), //Düzenlendi
@@ -38,7 +38,7 @@ final ThemeData tema = ThemeData(
       onError: Color(0xffffffff),
       brightness: Brightness.light,
     ),
-    scaffoldBackgroundColor: Color(0xfff8f8f8), //Arkaplan rengi
+    scaffoldBackgroundColor: const Color(0xfff8f8f8), //Arkaplan rengi
   
     textTheme: TextTheme(
           //HO
@@ -46,7 +46,7 @@ final ThemeData tema = ThemeData(
           fontSize: 93,
           fontWeight: FontWeight.w400,
           letterSpacing: -1.5,
-          color: Color(0xff262835),
+          color: const Color(0xff262835),
           ),
 
           //H1
@@ -54,7 +54,7 @@ final ThemeData tema = ThemeData(
             fontSize: 48.8,
             fontWeight: FontWeight.w400,
             letterSpacing: -0.4,
-            color: Color(0xff262835),
+            color: const Color(0xff262835),
           ),
 
           //H2
@@ -62,7 +62,7 @@ final ThemeData tema = ThemeData(
             fontSize: 39.1,
             fontWeight: FontWeight.w400,
             letterSpacing: -0.4,
-            color: Color(0xff262835),
+            color: const Color(0xff262835),
           ),
 
           //H3
@@ -70,7 +70,7 @@ final ThemeData tema = ThemeData(
             fontSize: 31.3,
             fontWeight: FontWeight.w400,
             letterSpacing: -0.4,
-            color: Color(0xff262835),
+            color: const Color(0xff262835),
           ),
 
           //H4
@@ -78,7 +78,7 @@ final ThemeData tema = ThemeData(
             fontSize: 25,
             fontWeight: FontWeight.w400,
             letterSpacing: -0.4,
-            color: Color(0xff262835),
+            color: const Color(0xff262835),
           ),
 
           //H5
@@ -86,14 +86,14 @@ final ThemeData tema = ThemeData(
             fontSize: 19,
             fontWeight: FontWeight.w400,
             letterSpacing: -0.4,
-            color: Color(0xff262835),
+            color: const Color(0xff262835),
           ),
           //Paragraph
           titleMedium: GoogleFonts.poppins(
             fontSize: 16,
             fontWeight: FontWeight.w400,
             letterSpacing: -0.4,
-            color: Color(0xff262835),
+            color: const Color(0xff262835),
           ),
           titleSmall: GoogleFonts.poppins(
             fontSize: 14,
@@ -121,14 +121,14 @@ final ThemeData tema = ThemeData(
             fontSize: 12.8,
             fontWeight: FontWeight.w400,
             letterSpacing: -0.4,
-            color: Color(0xff262835),
+            color: const Color(0xff262835),
           ),
           //XSmall
           labelSmall: GoogleFonts.poppins(
             fontSize: 10,
             fontWeight: FontWeight.w400,
             letterSpacing: -0.4,
-            color: Color(0xff262835),
+            color: const Color(0xff262835),
           ),
     ),
   

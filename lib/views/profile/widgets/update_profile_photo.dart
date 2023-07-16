@@ -8,7 +8,10 @@ import 'package:firebase_storage/firebase_storage.dart';
 // İleriki süreçlerde profil düzenleme ekranları yaplırkn gotoğraf güncelleme ekranı olarak kullanılacak
 
 class UpdateProfilePhotoPage extends StatefulWidget {
+  const UpdateProfilePhotoPage({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _UpdateProfilePhotoPageState createState() => _UpdateProfilePhotoPageState();
 }
 
@@ -51,7 +54,7 @@ class _UpdateProfilePhotoPageState extends State<UpdateProfilePhotoPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profil'),
+        title: const Text('Profil'),
       ),
       body: Center(
         child: Column(
@@ -66,15 +69,15 @@ class _UpdateProfilePhotoPageState extends State<UpdateProfilePhotoPage> {
                     radius: 75,
                     backgroundImage: NetworkImage(FirebaseAuth.instance.currentUser?.photoURL ?? ''),
                   ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: _getImageFromCamera,
-              child: Text('Kamera aç'),
+              child: const Text('Kamera aç'),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: _updateProfilePhoto,
-              child: Text('Profil Fotoğrafını Güncelle'),
+              child: const Text('Profil Fotoğrafını Güncelle'),
             ),
           ],
         ),

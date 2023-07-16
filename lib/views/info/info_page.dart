@@ -1,7 +1,7 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:f46/views/info/comment_tab.dart';
-import 'package:f46/views/info/widgets/comment.dart';
+import 'package:f46/views/info/map_tab.dart';
 import 'package:f46/views/info/widgets/sliver_appbar_delegate.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../../../../ui/costum_theme.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -10,8 +10,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 // ignore: camel_case_types
 class infoPage extends StatefulWidget {
   final String locId;     //Bir önceki sayfadan gelirken getirilen id
-  
-  const infoPage({super.key, required this.locId});
+  final String colId;   
+  const infoPage({super.key, required this.locId, required this.colId});
 
   @override
   State<infoPage> createState() => _infoPageState();
@@ -28,16 +28,18 @@ class _infoPageState extends State<infoPage> with SingleTickerProviderStateMixin
     super.initState();
   } 
   
- 
+    String convertNewLine(String content) {
+          return content.replaceAll(r'\n', '\n');
+      }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: FutureBuilder<DocumentSnapshot>(
-              future: FirebaseFirestore.instance.collection('locations').doc(widget.locId).get(),
+              future: FirebaseFirestore.instance.collection(widget.colId).doc(widget.locId).get(),
               builder:(BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
                 if (snapshot.hasError) {
-                  return Text("Bir şeyler ters gitti.");
+                  return const Text("Bir şeyler ters gitti.");
                 }
                 if (snapshot.hasData && !snapshot.data!.exists) {
                    return const Center (
@@ -47,7 +49,10 @@ class _infoPageState extends State<infoPage> with SingleTickerProviderStateMixin
                   return const CircularProgressIndicator();
                 }
                 if (snapshot.connectionState == ConnectionState.done) {
+                  
                     Map<String, dynamic> data = snapshot.data!.data() as Map<String, dynamic>;
+                    double xCoordinate = data['xCoordinate'];
+                    double yCoordinate = data['yCoordinate'];
                     return DefaultTabController(
                       length: 3,
                       child: NestedScrollView(
@@ -81,8 +86,8 @@ class _infoPageState extends State<infoPage> with SingleTickerProviderStateMixin
                                   background: Stack(
                                     fit: StackFit.expand,
                                     children: [
-                                      Image.network(
-                                        "${data['img']} ",
+                                      CachedNetworkImage(
+                                        imageUrl: "${data['img']} ",
                                         fit: BoxFit.cover,
                                       ),
                                       const DecoratedBox(decoration: BoxDecoration(
@@ -130,25 +135,19 @@ class _infoPageState extends State<infoPage> with SingleTickerProviderStateMixin
                                               mainAxisAlignment: MainAxisAlignment.start,
                                               crossAxisAlignment: CrossAxisAlignment.start,
                                               children: [
-                                                SizedBox(height: 8,),
-                                                Text("${data['description']} ", 
+                                                const SizedBox(height: 8,),
+                                                Text(convertNewLine("${data['description']}"), 
                                                 style: context.paragraph?.copyWith(color: context.gri),
                                                 // overflow: TextOverflow.ellipsis, // sonuna nokta nokta ekler
                                                 // maxLines: 6, //maksimum satır sayısı
                                                 ),
                                                 const SizedBox(height: 22,),
                                                 Text("Toplulukta Paylaşılanlar ", style: context.h4,),
-                                                
-                                                
                                               ],
                                             )
-                                            
                                           ]
                                         ),
                                         ),
-
-                                        
-                                      
                                         SliverGrid(
                                           gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                                             maxCrossAxisExtent: 150.0,
@@ -160,7 +159,6 @@ class _infoPageState extends State<infoPage> with SingleTickerProviderStateMixin
                                             (BuildContext context, int index) {
                                               final photo = data['photos'][index]; // locIdden geliyo
                                               return Container(
-                                                
                                                 decoration: BoxDecoration(
                                                   color: context.primary,
                                                   borderRadius: const BorderRadius.all(Radius.circular(10)),
@@ -169,33 +167,25 @@ class _infoPageState extends State<infoPage> with SingleTickerProviderStateMixin
                                                 ClipRRect(
                                                 borderRadius: BorderRadius.circular(10),
                                                 child: 
-                                                Image.network(photo, fit: BoxFit.cover,),),
+                                                CachedNetworkImage(
+                                                  imageUrl: photo, fit: BoxFit.cover,),),
                                               );
                                             },
                                             childCount: data['photos'].length,
                                           ),
                                         ),
-
-                                        
                                     ],
                                   ),
                                 ),
                                 SafeArea(
                                 top: false,
                                 child: CommentTab(locId: widget.locId),),
-                                const Card(
-                                  margin: EdgeInsets.all(16.0),
-                                  child: Center(
-                                      child: Text('Haritalar ve konum bilgileri eklenecek!')),
-                                ),
+                                MapTab(xCoordinate: xCoordinate, yCoordinate: yCoordinate)
                               ],
                             ),
                       ),
                     );
-                
-                
                 }
-
                 return const CircularProgressIndicator();
                 },
                               ),
