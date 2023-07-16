@@ -133,10 +133,10 @@ Alınan kararlar: Uygulamanın tasarımının genel hatları kesinleşmiş, goog
 
 - **Sprint board update**: Sprint board screenshotları: 
 
-![Backlog 1](readmeDocument/sprint3_2.jpg)
+![Backlog 1](readmeDocument/Sprint3_2.jpg)
 
 - **Ürün Durumu**: Ürün Durumu:
-  ![Screenshot 1](readmeDocument/sprint3.jpg)
+  ![Screenshot 1](readmeDocument/Sprint3.jpg)
 
   
 - **Sprint Review**: 
